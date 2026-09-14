@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import joblib
 
 # --- 1. SET UP PAGE STYLING ---
 st.set_page_config(page_title="NYC Airbnb Price Predictor", page_icon="🏢", layout="centered")
@@ -13,8 +14,7 @@ st.write("Enter the details of an NYC property below to instantly generate a mac
 # --- 2. LOAD THE TRAINED PIPELINE ---
 @st.cache_resource
 def load_pipeline():
-    with open('airbnb_model_pipeline.pkl', 'rb') as file:
-        return pickle.load(file)
+    return joblib.load('airbnb_model_pipeline.pkl')
 
 try:
     model_pipeline = load_pipeline()
