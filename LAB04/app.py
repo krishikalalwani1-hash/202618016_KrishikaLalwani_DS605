@@ -12,14 +12,23 @@ st.title("🏢 New York City Airbnb Price Predictor")
 st.write("Enter the details of an NYC property below to instantly generate a machine-learning predicted nightly price.")
 
 # --- 2. LOAD THE TRAINED PIPELINE ---
+
+
+from pathlib import Path
+
+
+# Base path relative to where app.py lives
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "airbnb_model_pipeline.pkl"
+
 @st.cache_resource
 def load_pipeline():
-    return joblib.load('airbnb_model_pipeline.pkl')
+    return joblib.load(MODEL_PATH)
 
 try:
     model_pipeline = load_pipeline()
 except FileNotFoundError:
-    st.error("❌ 'airbnb_model_pipeline.pkl' not found! Make sure you run your model training file to save it first.")
+    st.error(f"❌ '{MODEL_PATH.name}' not found at path: {MODEL_PATH}")
     st.stop()
 
 # --- 3. CREATE THE USER FORM INTERFACE ---
