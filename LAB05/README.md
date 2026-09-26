@@ -71,9 +71,3 @@ A new target was created:
 - The from-scratch Logistic Regression achieved comparable classification performance.
 - The optimized Logistic Regression reduced the recorded execution time while maintaining a similar F1-Score.
 - NumPy vectorization was used to improve the manual implementation.
-
-### Files
-
-- `assignment.ipynb` – Complete implementation and analysis
-- `README.md` – Project documentation
-- `garment_worker_productivity.csv` – Dataset
