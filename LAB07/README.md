@@ -62,14 +62,6 @@ Tuned settings (chosen by cross-validation, using k = 50 components):
 - **Classifiers:** The best classifier was KNN (tuned, k=50) with 98.75% test accuracy, which matched the nearest-neighbor baseline (98.75%).
 - **Number of components:** Cross-validated accuracy on the training set reaches within one percentage point of its best value at about k = 30 components, so a compact representation retains most of the recognition accuracy (see `accuracy_vs_components.png`).
 
-## How to run
-```bash
-python -m venv venv
-# activate the environment, then:
-pip install -r requirements.txt
-jupyter notebook lab7.ipynb
-```
-Place the dataset in a folder named `data/` containing the subject folders `s1` ... `s40`, then run all cells (Kernel > Restart and Run All).
 
 ## Notes
 - PCA, eigenfaces, projection and reconstruction are implemented with NumPy linear algebra only. Scikit-learn is used only for the final traditional-ML comparison and cross-validation.
