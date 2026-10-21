@@ -1,0 +1,6 @@
+Method,Features,Test accuracy
+NN on raw pixels (baseline),10304,1.0
+"NN on PCA (baseline, k=98)",98,0.9875
+"KNN (tuned, k=50)",50,0.9875
+"Logistic Regression (tuned, k=50)",50,0.975
+"SVM (tuned, k=50)",50,0.975
